@@ -20,9 +20,15 @@ client.on("ready", () => {
   app.post("/", (req, res) => {
     const channel = client.channels.cache.get("598885225904341024");
     // code here
+    const Email = new Discord.MessageEmbed()
+      .setColor("#eee")
+      .setTitle(req.body.subject)
+      .setAuthor(`${req.body.fromName}:${req.body.fromEmail}`)
+      .setDescription(req.body.body)
+      .setFooter("Some footer text here", "https://i.imgur.com/wSTFkRM.png");
 
     //here sending damsg
-    channel.send(JSON.stringify(req.body));
+    channel.send(Email);
     res.end();
   });
 });
