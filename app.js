@@ -1,9 +1,13 @@
+require("dotenv").config();
 const CORS = require("cors");
-const app = require("express")();
+const express = require("express");
+const app = express();
 const Discord = require("discord.js");
 
 const client = new Discord.Client();
-const channel = client.channels.get("name", "general");
+
+app.use(CORS());
+app.use(express.json());
 
 //Bot stuff
 client.on("ready", () => {
@@ -12,15 +16,18 @@ client.on("ready", () => {
       name: "Blood for NEXUS",
     },
   });
+
+  app.post("/", (req, res) => {
+    const channel = client.channels.cache.get("598885225904341024");
+    // code here
+
+    //here sending damsg
+    channel.send(JSON.stringify(req.body));
+    res.end();
+  });
 });
 
-app.use(CORS());
-app.post("/", (req, res) => {
-  channel.send(JSON.stringify(req.body));
-});
-
-client.login("NzA0MDYzMjI0NjEzNTY4NTEy.XqXtBQ.-e_qclqofygBi-tk50LM4VodGSo");
-
+client.login(process.env.TOKEN);
 app.listen(process.env.PORT || 5000, () => {
   console.log(`Lol listing in ${process.env.PORT || 5000}`);
 });
