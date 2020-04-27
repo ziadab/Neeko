@@ -1,3 +1,3 @@
 import requests
 
-requests.post("http://127.0.0.1:5000/", json={"thla": "jhkshqksjq"})
+requests.post("http://127.0.0.1:5000/", json={"subject": "Kata Testing", "fromName": "Yaami", "fromEmail": "ssjklqskl@lol.om", "body": 'PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPMAAAAAAAAAAAAJALMDAJDKAZMJAZMSAZDKLJSMJLNJXMONDLIZAZNLSL'})

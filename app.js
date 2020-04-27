@@ -21,11 +21,11 @@ client.on("ready", () => {
     const channel = client.channels.cache.get("598885225904341024");
     // code here
     const Email = new Discord.MessageEmbed()
-      .setColor("#eee")
+      .setColor("#eeeeee")
       .setTitle(req.body.subject)
-      .setAuthor(`${req.body.fromName}:${req.body.fromEmail}`)
-      .setDescription(req.body.body)
-      .setFooter("Some footer text here", "https://i.imgur.com/wSTFkRM.png");
+      .setAuthor(`${req.body.fromName} : ${req.body.fromEmail}`)
+      .setDescription(req.body.body);
+    //.setFooter("Some footer text here", "https://i.imgur.com/wSTFkRM.png");
 
     //here sending damsg
     channel.send(Email);
