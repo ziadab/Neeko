@@ -18,7 +18,7 @@ client.on("ready", () => {
   });
 
   app.post("/", (req, res) => {
-    const channel = client.channels.cache.get("598885225904341024");
+    const channel = client.channels.cache.get(process.env.CHANNEL_ID);
     // code here
     const Email = new Discord.MessageEmbed()
       .setColor("#eeeeee")
