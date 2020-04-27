@@ -22,7 +22,7 @@ client.on("ready", () => {
     // code here
     const Email = new Discord.MessageEmbed()
       .setColor("#eeeeee")
-      .setTitle(req.body.subject)
+      .setTitle(req.body.subject || "No Subject :'(")
       .setAuthor(`${req.body.fromName} : ${req.body.fromEmail}`)
       .setDescription(req.body.body);
     //.setFooter("Some footer text here", "https://i.imgur.com/wSTFkRM.png");
